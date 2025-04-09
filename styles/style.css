@@ -13,4 +13,189 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  padding: 100px 0;
+  font-family: var(--page-font-family, sans-serif);
+  font-variation-settings: 'wght' 400;
+  color: var(--text-color, #000000);
+  background-color: var(--page-background-color, #ffffff);
+  background-image: var(--page-background-image, none);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  background-color: var(--page-background-color, #ffffff);
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  font-family: var(--page-accent-font-family, serif);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-block-end: 100px;
+}
+
+.page__title {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.card {
+  border: 2px solid #000000;
+  width: var(--section-width);
+  margin-inline: auto;
+  background-color: var(--page-background-color, #ffffff);
+}
+
+.main {
+  padding-block-end: 103px;
+}
+
+.cards__container {
+  display: grid;
+  gap: 52px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--heading-font-weight);
+  padding: 5px 10px;
+  border-bottom: var(--border-size, 2px) solid #000000;
+}
+
+.card__image-container {
+  position: relative;
+}
+
+.card__image-text {  
+  font-size: 14px;
+  text-transform: uppercase;
+  position: absolute;
+  inset-block-start: 25px;
+  inset-inline-end: 25px;
+  z-index: 1;
+  opacity: 0.5;
+  font-family: var(--page-accent-font-family, serif);
+  color: var(--text-color, #000000);
+  text-shadow: 0 0 1px #ffffff;  
+  mix-blend-mode: hard-light;
+}
+
+.card__image {
+  display: block;
+  inline-size: 100%;  
+  aspect-ratio: 1 / 1;  
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  font-size: 18px;
+  padding: 25px;  
+  border-top: var(--border-size, 2px) solid #000000;
+}
+
+.card__buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: end;
+  position: relative;
+  margin-inline-end: 25px;
+  margin-block-end: 20px;
+}
+
+.button__default {
+  border: 2px solid #000000;
+  font-family: var(--page-accent-font-family, serif);
+  font-size: 14px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+  padding: 10px 37px;
+  position: relative;
+}
+
+.save-button {
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--page-background-color, #ffffff);
+  font-size: 14px;
+  margin-block-start: 50px;
+  width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
+  padding: 15px;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.floppy__icon {
+  inline-size: 21px;
+  block-size: 21px;
+}
+
+/* для карточки №2 */
+.filter__pale {
+  filter: grayscale(0.65);
+}
+
+/* для карточки №3 */
+.filter__saturation {
+  filter: saturate(320%);
+}
+
+/* для карточки №4 */
+.filter__hue-rotate {
+  filter: hue-rotate(-90deg);
+}
+
+/* для карточки №5 */
+.filter__invert {
+  filter: invert(0.8) contrast(1.1);
+}
+
+/* для карточки №6 */
+.filter__sepia {
+  filter: sepia(100%);
+}
+
+/* для карточки №7 */
+.filter__blur {
+  filter: blur(10px);
+}
+
+/* для карточки №8 */
+.filter__contrast {
+  filter: contrast(160%);
+}
+
+@supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
+  .card__image-text {    
+    text-shadow: none;
+    -webkit-text-stroke: 1px #ffffff;
+    text-stroke: 1px #ffffff;
+  }
 }
