@@ -114,10 +114,47 @@
 
 .button__default {
   border: 2px solid #000000;
+  position: relative;
+  z-index: 1;
   font-family: var(--page-accent-font-family, serif);
   font-size: 14px;
-  background-color: transparent;
+  background-color: var(--page-background-color, #ffffff);
   cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.button__default:focus {
+  outline: none;
+}
+
+.button__default:focus-visible {
+  box-shadow: 2px 2px 0 0 #000000;
+}
+
+.button__default::before {
+  content: '';
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset: 0;
+  z-index: -1;
+  background: #000000;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button__text {
+  position: relative;
+  display: block;
+  z-index: 1;  
+  color: var(--light-text-color, #ffffff);
+  mix-blend-mode: difference;
+  transition: color 0.5s ease-in-out;
+}
+
+.button__default:hover::before {
+  transform: scaleX(1);
 }
 
 .card__icon-button {
@@ -137,7 +174,6 @@
 
 .save-button {
   margin-inline: auto;
-  /* margin-inline: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,9 +189,48 @@
   text-transform: lowercase;
 }
 
-.floppy__icon {
+.floppy-icon {
   inline-size: 21px;
   block-size: 21px;
+  color: var(--light-text-color, #ffffff);
+  mix-blend-mode: difference;
+}
+
+.modal-window {
+  padding: 30px;
+  max-inline-size: 357px;
+  font-family: var(--page-accent-font-family, serif);
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.modal-window::backdrop {
+  background: #000000;
+  opacity: 0.75;
+}
+
+.modal-window__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.floppy-icon__modal {
+  inline-size: 39px;
+  block-size: 39px;  
+  flex-shrink: 0;
+}
+
+.modal__button {
+  inline-size: 100%;
+  height: 38px;
+  padding-top: 6px;
+}
+
+.modal-window[open] {
+  display: grid;
+  gap: 30px;
 }
 
 /* для карточки №2 */
@@ -213,5 +288,9 @@
   .floppy__icon {
     inline-size: 28px;
     block-size: 28px;
+  }
+
+  .modal-window {
+    max-inline-size: 341px;
   }
 }
