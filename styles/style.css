@@ -98,8 +98,9 @@
   flex-direction: column;
   gap: 27px;
   font-size: 18px;
-  padding: 25px;  
+  padding: 27.5px;  
   border-top: var(--border-size, 2px) solid #000000;
+  margin-block-start: -2px;
 }
 
 .card__buttons {
@@ -131,12 +132,12 @@
 .card__like-button {
   inline-size: 130px;
   block-size: 38px;
-  padding: 10px 37px;
   position: relative;
 }
 
 .save-button {
   margin-inline: auto;
+  /* margin-inline: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,5 +198,20 @@
     text-shadow: none;
     -webkit-text-stroke: 1px #ffffff;
     text-stroke: 1px #ffffff;
+  }
+}
+
+@media (width <= 375px) {
+  .page {
+    padding-block-end: 0;
+  }
+  .save-button {
+    flex-direction: column;
+    margin-inline: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem);
+  }
+
+  .floppy__icon {
+    inline-size: 28px;
+    block-size: 28px;
   }
 }
