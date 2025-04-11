@@ -71,7 +71,7 @@
   position: relative;
 }
 
-.card__image-text {  
+.card__image-text {
   font-size: 14px;
   text-transform: uppercase;
   position: absolute;
@@ -81,14 +81,14 @@
   opacity: 0.5;
   font-family: var(--page-accent-font-family, serif);
   color: var(--text-color, #000000);
-  text-shadow: 0 0 1px #ffffff;  
+  text-shadow: 0 0 1px #ffffff;
   mix-blend-mode: hard-light;
 }
 
 .card__image {
   display: block;
-  inline-size: 100%;  
-  aspect-ratio: 1 / 1;  
+  inline-size: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
 }
@@ -98,7 +98,7 @@
   flex-direction: column;
   gap: 27px;
   font-size: 18px;
-  padding: 27.5px;  
+  padding: 27.5px;
   border-top: var(--border-size, 2px) solid #000000;
   margin-block-start: -2px;
 }
@@ -147,7 +147,7 @@
 .button__text {
   position: relative;
   display: block;
-  z-index: 1;  
+  z-index: 1;
   color: var(--light-text-color, #ffffff);
   mix-blend-mode: difference;
   transition: color 0.5s ease-in-out;
@@ -218,7 +218,7 @@
 
 .floppy-icon__modal {
   inline-size: 39px;
-  block-size: 39px;  
+  block-size: 39px;
   flex-shrink: 0;
 }
 
@@ -269,7 +269,8 @@
 }
 
 @supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
-  .card__image-text {    
+  
+  .card__image-text {
     text-shadow: none;
     -webkit-text-stroke: 1px #ffffff;
     text-stroke: 1px #ffffff;
