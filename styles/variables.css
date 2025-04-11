@@ -15,6 +15,8 @@
     /* Переменные для иконки сердца*/
     --contour-color: black;
     --main-body-color: none;
+    --main-body-color-hover: #000000;
+    --hover-color: #000000;
     --core-color: none;
     --sparks-color: none;
     --animation-fill-color: #FF0000;

@@ -105,7 +105,7 @@
 
 .card__buttons {
   display: flex;
-  gap: 12px;
+  gap: 5px;
   justify-content: end;
   position: relative;
   margin-inline-end: 25px;
@@ -266,10 +266,6 @@
 /* для карточки №8 */
 .filter__contrast {
   filter: contrast(160%);
-}
-
-.sparks {
-  opacity: 0;
 }
 
 @supports ((text-stroke: 1px #ffffff) or (-webkit-text-stroke: 1px #ffffff)) {
