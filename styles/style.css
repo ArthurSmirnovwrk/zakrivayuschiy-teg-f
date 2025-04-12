@@ -13,7 +13,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  padding: 100px 0;
+  padding-block-start: 100px;
   font-family: var(--page-font-family, sans-serif);
   font-variation-settings: 'wght' 400;
   color: var(--text-color, #000000);
@@ -24,9 +24,8 @@
 }
 
 .header {
-  background-color: var(--page-background-color, #ffffff);
   padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
-  font-family: var(--page-accent-font-family, serif);
+  font-family: var(--page-accent-font-family, fantasy);
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -45,30 +44,34 @@
 }
 
 .card {
-  border: 2px solid #000000;
+  border: var(--border-size, 2px) solid var(--text-color, #000000);
   width: var(--section-width);
   margin-inline: auto;
   background-color: var(--page-background-color, #ffffff);
 }
 
 .main {
-  padding-block-end: 103px;
+  padding-block-end: 100px;
 }
 
 .cards__container {
   display: grid;
-  gap: 52px;
+  gap: 50px;
+}
+
+.card__header {
+  border-block-end: var(--border-size, 2px) solid var(--text-color, #000000);
 }
 
 .card__title {
   font-size: 18px;
   font-variation-settings: 'wght' var(--heading-font-weight);
   padding: 5px 10px;
-  border-bottom: var(--border-size, 2px) solid #000000;
 }
 
 .card__image-container {
   position: relative;
+  overflow: hidden;
 }
 
 .card__image-text {
@@ -79,7 +82,7 @@
   inset-inline-end: 25px;
   z-index: 1;
   opacity: 0.5;
-  font-family: var(--page-accent-font-family, serif);
+  font-family: var(--page-accent-font-family, fantasy);
   color: var(--text-color, #000000);
   text-shadow: 0 0 1px #ffffff;
   mix-blend-mode: hard-light;
@@ -98,25 +101,23 @@
   flex-direction: column;
   gap: 27px;
   font-size: 18px;
-  padding: 27.5px;
-  border-top: var(--border-size, 2px) solid #000000;
-  margin-block-start: -2px;
+  padding: 25px; 
+  border-block-start: var(--border-size, 2px) solid var(--text-color, #000000);
 }
 
 .card__buttons {
   display: flex;
-  gap: 5px;
+  gap: 6px;
   justify-content: end;
   position: relative;
-  margin-inline-end: 25px;
-  margin-block-end: 20px;
+  padding: 0 25px 25px 25px;
 }
 
 .button__default {
   border: 2px solid #000000;
   position: relative;
   z-index: 1;
-  font-family: var(--page-accent-font-family, serif);
+  font-family: var(--page-accent-font-family, fantasy);
   font-size: 14px;
   background-color: var(--page-background-color, #ffffff);
   cursor: pointer;
@@ -158,12 +159,20 @@
 }
 
 .card__icon-button {
-  border: none;
+  border: 2px solid transparent;
   background-color: transparent;
   display: flex;
   align-items: center;
-  padding: 1px;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
+  transition: border-color 0.3s ease;
+  max-height: 38px;
+  max-width: 38px;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--text-color, #000000);
 }
 
 .card__like-button {
@@ -182,7 +191,7 @@
   font-size: 14px;
   margin-block-start: 50px;
   width: clamp(19.125rem, 18.4868rem + 2.723vw, 20.9375rem);
-  padding: 15px;
+  padding: 15px 0;
 }
 
 .lowercase {
@@ -190,8 +199,8 @@
 }
 
 .floppy-icon {
+  block-size: 21px;  
   inline-size: 21px;
-  block-size: 21px;
   color: var(--light-text-color, #ffffff);
   mix-blend-mode: difference;
 }
@@ -199,7 +208,7 @@
 .modal-window {
   padding: 30px;
   max-inline-size: 357px;
-  font-family: var(--page-accent-font-family, serif);
+  font-family: var(--page-accent-font-family, fantasy);
   font-size: 14px;
   line-height: 1.5;
   text-transform: uppercase;
@@ -278,17 +287,27 @@
 }
 
 @media (width <= 375px) {
+
   .page {
     padding-block-end: 0;
   }
-  .save-button {
-    flex-direction: column;
-    margin-inline: clamp(2.15625rem, -9.2324rem + 48.5915vw, 34.5rem);
+
+  .card__image-text {
+    inset-block-start: 24px;
+    inset-inline-end: 13px;
   }
 
-  .floppy__icon {
-    inline-size: 28px;
+  .floppy-icon {
     block-size: 28px;
+    inline-size: 28px;
+  }
+
+  .save-button {
+    display: flex;
+    flex-direction: column;
+    max-inline-size: 310px;
+    width: 100%;
+    gap: 8px;
   }
 
   .modal-window {
