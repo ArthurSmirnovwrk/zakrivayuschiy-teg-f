@@ -101,7 +101,7 @@
   flex-direction: column;
   gap: 27px;
   font-size: 18px;
-  padding: 25px; 
+  padding: 25px;
   border-block-start: var(--border-size, 2px) solid var(--text-color, #000000);
 }
 
@@ -199,7 +199,7 @@
 }
 
 .floppy-icon {
-  block-size: 21px;  
+  block-size: 21px;
   inline-size: 21px;
   color: var(--light-text-color, #ffffff);
   mix-blend-mode: difference;
