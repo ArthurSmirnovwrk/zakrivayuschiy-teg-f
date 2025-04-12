@@ -103,6 +103,7 @@
   font-size: 18px;
   padding: 25px;
   border-block-start: var(--border-size, 2px) solid var(--text-color, #000000);
+  line-height: 21px;
 }
 
 .card__buttons {
@@ -171,7 +172,12 @@
   max-width: 38px;
 }
 
+.card__icon-button:focus {
+  outline: none;
+}
+
 .card__icon-button:focus-visible {
+  outline: none;
   border-color: var(--text-color, #000000);
 }
 
